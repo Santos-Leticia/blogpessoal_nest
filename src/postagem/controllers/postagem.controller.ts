@@ -1,5 +1,5 @@
 import { Postagem } from '../entities/postagem.entity';
-import { PostagemService } from '../entities/services/postagem.service';
+import { PostagemService } from '../services/postagem.service';
 import {
   Body,
   Controller,

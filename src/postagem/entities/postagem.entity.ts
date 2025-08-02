@@ -2,6 +2,7 @@ import { IsNotEmpty } from 'class-validator';
 import {
   Column,
   Entity,
+  JoinColumn,
   ManyToOne,
   PrimaryGeneratedColumn,
   UpdateDateColumn,
@@ -27,5 +28,6 @@ export class Postagem {
   @ManyToOne(() => Tema, (tema) => tema.postagem, {
     onDelete: 'CASCADE',
   })
+  @JoinColumn({ name: 'tema_id' })
   tema: Tema;
 }

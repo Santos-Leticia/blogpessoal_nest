@@ -1,9 +1,9 @@
 import { Injectable } from '@nestjs/common';
 import { DeleteResult, Like, Repository } from 'typeorm';
-import { Postagem } from '../postagem.entity';
+import { Postagem } from '../entities/postagem.entity';
 import { InjectRepository } from '@nestjs/typeorm';
 import { HttpStatus, HttpException } from '@nestjs/common';
-import { TemaService } from '../../../tema/services/tema.service';
+import { TemaService } from '../../tema/services/tema.service';
 @Injectable()
 export class PostagemService {
   constructor(
