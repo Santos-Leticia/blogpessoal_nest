@@ -1,3 +1,4 @@
+import { ApiBearerAuth, ApiTags } from '@nestjs/swagger';
 import { JwtAuthGuard } from '../../auth/guard/jwt-auth.guard';
 import { Postagem } from '../entities/postagem.entity';
 import { PostagemService } from '../services/postagem.service';
@@ -15,8 +16,10 @@ import {
   UseGuards,
 } from '@nestjs/common';
 
+@ApiTags('Postagem')
 @UseGuards(JwtAuthGuard)
 @Controller('/postagens')
+@ApiBearerAuth()
 export class PostagemController {
   constructor(private readonly postagemService: PostagemService) {}
 
@@ -32,7 +35,7 @@ export class PostagemController {
     return this.postagemService.findById(id);
   }
 
-  @Get('/titulo/titulo')
+  @Get('/titulo/:titulo')
   @HttpCode(HttpStatus.OK)
   findByTitulo(@Param('titulo') titulo: string): Promise<Postagem[]> {
     return this.postagemService.findAllByTitulo(titulo);
