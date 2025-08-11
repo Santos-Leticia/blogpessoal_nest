@@ -5,8 +5,8 @@ import { AuthModule } from './auth/auth.module';
 import { UsuarioModule } from './usuario/usuario.module';
 import { TemaModule } from './tema/tema.module';
 import { AppController } from './app.controller';
-import { ProdService } from './data/services/prod.service';
 import { ConfigModule } from '@nestjs/config';
+import { ProdService } from './data/services/prod.service';
 
 @Module({
   imports: [
